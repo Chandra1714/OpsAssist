@@ -25,7 +25,7 @@ function Dashboard({ user, token, onLogout }) {
 
   const fetchProfile = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/users/me", {
+      const response = await axios.get("http://localhost:8080/users/me", {
         headers: authHeaders,
       });
       setMessage(`Welcome back, ${response.data.full_name || response.data.email}!`);
@@ -36,7 +36,7 @@ function Dashboard({ user, token, onLogout }) {
 
   const fetchIncidents = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/incidents/", {
+      const response = await axios.get("http://localhost:8080/incidents/", {
         headers: authHeaders,
       });
       setIncidents(response.data);
@@ -47,7 +47,7 @@ function Dashboard({ user, token, onLogout }) {
 
   const fetchSummary = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/incidents/summary", {
+      const response = await axios.get("http://localhost:8080/incidents/summary", {
         headers: authHeaders,
       });
       setSummary(response.data);

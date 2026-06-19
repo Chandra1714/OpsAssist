@@ -12,7 +12,7 @@ function KnowledgeBase({ token }) {
 
   const fetchItems = async (searchQuery = "") => {
     try {
-      const response = await axios.get("http://localhost:8000/knowledge/", {
+      const response = await axios.get("http://localhost:8080/knowledge/", {
         headers: { Authorization: `Bearer ${token}` },
         params: { query: searchQuery },
       });
@@ -38,7 +38,7 @@ function KnowledgeBase({ token }) {
 
     try {
       await axios.post(
-        "http://localhost:8000/knowledge/",
+        "http://localhost:8080/knowledge/",
         { title, content, tags },
         { headers: { Authorization: `Bearer ${token}` } }
       );

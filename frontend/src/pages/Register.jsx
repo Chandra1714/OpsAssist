@@ -16,7 +16,7 @@ function Register({ onRegistered }) {
     setSuccess(null);
 
     try {
-      await axios.post("http://localhost:8000/register", {
+      await axios.post("http://localhost:8080/register", {
         email,
         full_name: fullName,
         password,

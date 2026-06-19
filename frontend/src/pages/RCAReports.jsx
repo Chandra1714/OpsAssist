@@ -12,7 +12,7 @@ function RCAReports({ token }) {
   useEffect(() => {
     const fetchIncidents = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/incidents/", {
+        const response = await axios.get("http://localhost:8080/incidents/", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setIncidents(response.data);
@@ -33,7 +33,7 @@ function RCAReports({ token }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/incidents/${selectedId}/rca`,
+        `http://localhost:8080/incidents/${selectedId}/rca`,
         { format, resolution_notes: notes },
         {
           headers: { Authorization: `Bearer ${token}` },

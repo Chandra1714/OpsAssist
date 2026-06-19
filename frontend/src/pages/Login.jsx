@@ -13,7 +13,7 @@ function Login({ onLogin, onNavigate }) {
     setError(null);
 
     try {
-      const response = await axios.post("http://localhost:8000/login", {
+      const response = await axios.post("http://localhost:8080/login", {
         email,
         password,
         remember_me: rememberMe,

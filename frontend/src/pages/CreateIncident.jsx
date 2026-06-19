@@ -42,7 +42,7 @@ function CreateIncident({ token, onCreated }) {
 
     try {
       await axios.post(
-        "http://localhost:8000/incidents/",
+        "http://localhost:8080/incidents/",
         {
           title,
           cluster_name: clusterName,

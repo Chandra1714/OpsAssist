@@ -13,7 +13,7 @@ function ForgotPassword({ onReturn }) {
     setError(null);
 
     try {
-      await axios.post("http://localhost:8000/forgot-password", { email });
+      await axios.post("http://localhost:8080/forgot-password", { email });
       setMessage("If your email exists, reset instructions have been sent.");
     } catch (err) {
       setError("Unable to send reset instructions. Please try again.");

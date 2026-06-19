@@ -13,7 +13,7 @@ function AIAnalysis({ token, incident, onAnalyze, analysis, setAnalysis }) {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:8000/incidents/${incident.id}/analysis`,
+          `http://localhost:8080/incidents/${incident.id}/analysis`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setAnalysis(response.data);

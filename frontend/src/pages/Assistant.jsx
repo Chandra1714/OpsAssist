@@ -14,7 +14,7 @@ function Assistant({ token }) {
   useEffect(() => {
     const fetchIncidents = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/incidents/", {
+        const response = await axios.get("http://localhost:8080/incidents/", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setIncidents(response.data);
@@ -35,7 +35,7 @@ function Assistant({ token }) {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/assistant/chat",
+        "http://localhost:8080/assistant/chat",
         {
           messages: nextMessages,
           incident_id: selectedIncident || null,

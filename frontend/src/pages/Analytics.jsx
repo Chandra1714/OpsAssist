@@ -9,7 +9,7 @@ function Analytics({ token }) {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/analytics/", {
+        const response = await axios.get("http://localhost:8080/analytics/", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setAnalytics(response.data);
